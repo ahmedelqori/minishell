@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:30:40 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/02/02 13:57:27 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/02/02 15:05:14 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int main(int ac, char **av, char **env)
 		handle_signals();
 		prompt_msg = prompt(env);
 		input = readline(prompt_msg);
+		if (input == NULL)
+			exit(1);
 		history(input);
 	} 
 	 rl_clear_history();
