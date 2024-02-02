@@ -5,32 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 15:13:38 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/02/01 16:27:43 by ael-qori         ###   ########.fr       */
+/*   Created: 2024/02/02 09:25:49 by ael-qori          #+#    #+#             */
+/*   Updated: 2024/02/02 11:15:22 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL
 # define MINISHELL
 
-/*============== LIBRARY ================*/
-
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
-#include "../libft/libft.h"
-#include <readline/readline.h>
-#include <readline/history.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-
-// ============= DEFINE ==============
-
-#define CD  "cd"
-#define HOME_PATH "/home/meedivo"
-
-// COLORS
+// ===================== COLORS ==================
 
 #define RESET "\033[0m"
 #define BLACK "\033[30m"
@@ -50,8 +33,25 @@
 #define BOLDCYAN "\033[1m\033[36m"
 #define BOLDWHITE "\033[1m\033[37m"
 
-// parsing
 
-char    *ft_get_current_path(void);
-void    handle_change_dir(char *s);
+// ===================== INCLUDES =================
+
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
+# include <errno.h>
+# include <signal.h>
+# include <readline/readline.h>
+# include <readline/history.h>
+# include "../libft/libft.h"
+
+// ===================== VARIABLE ===================
+
+#define TRUE 1
+
+// =====================PROTO TYPE ==================
+
+char    *prompt(char **env);
+void    history(char *s);
 #endif
